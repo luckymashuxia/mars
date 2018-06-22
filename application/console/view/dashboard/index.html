@@ -1,0 +1,190 @@
+<!-- 模板继承 -->
+{extend name="template/base" /}
+{block name="content"}
+<style type="text/css">
+  .gray_bg{background-color: #f7f7f7;}
+</style>
+
+      <div class="row">
+
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-success panel-stat">
+            <div class="panel-heading">
+
+              <div class="stat">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img src="__CONSOLE__/images/is-user.png" alt="" />
+                  </div>
+                  <div class="col-xs-8">
+                    <small class="stat-label">会员数量</small>
+                    <h1>{$count['user']}</h1>
+                  </div>
+                </div><!-- row -->
+
+                <div class="mb15"></div>
+
+                <div class="row">
+                  <div class="col-xs-6">
+                    <small class="stat-label">管理员</small>
+                    <h4>{$count['manager']}</h4>
+                  </div>
+
+                  <div class="col-xs-6">
+                    <small class="stat-label">管理组</small>
+                    <h4>{$count['authgroup']}</h4>
+                  </div>
+                </div><!-- row -->
+              </div><!-- stat -->
+
+            </div><!-- panel-heading -->
+          </div><!-- panel -->
+        </div><!-- col-sm-6 -->
+
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-danger panel-stat">
+            <div class="panel-heading">
+
+              <div class="stat">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img src="__CONSOLE__/images/is-document.png" alt="" />
+                  </div>
+                  <div class="col-xs-8">
+                    <small class="stat-label">% Unique Visitors</small>
+                    <h1>54.40%</h1>
+                  </div>
+                </div><!-- row -->
+
+                <div class="mb15"></div>
+
+                <small class="stat-label">Avg. Visit Duration</small>
+                <h4>01:80:22</h4>
+
+              </div><!-- stat -->
+
+            </div><!-- panel-heading -->
+          </div><!-- panel -->
+        </div><!-- col-sm-6 -->
+
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-primary panel-stat">
+            <div class="panel-heading">
+
+              <div class="stat">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img src="__CONSOLE__/images/is-document.png" alt="" />
+                  </div>
+                  <div class="col-xs-8">
+                    <small class="stat-label">Page Views</small>
+                    <h1>300k+</h1>
+                  </div>
+                </div><!-- row -->
+
+                <div class="mb15"></div>
+
+                <small class="stat-label">% Bounce Rate</small>
+                <h4>34.23%</h4>
+
+              </div><!-- stat -->
+
+            </div><!-- panel-heading -->
+          </div><!-- panel -->
+        </div><!-- col-sm-6 -->
+
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-dark panel-stat">
+            <div class="panel-heading">
+
+              <div class="stat">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img src="__CONSOLE__/images/is-money.png" alt="" />
+                  </div>
+                  <div class="col-xs-8">
+                    <small class="stat-label">Today's Earnings</small>
+                    <h1>$655</h1>
+                  </div>
+                </div><!-- row -->
+
+                <div class="mb15"></div>
+
+                <div class="row">
+                  <div class="col-xs-6">
+                    <small class="stat-label">Last Week</small>
+                    <h4>$32,322</h4>
+                  </div>
+
+                  <div class="col-xs-6">
+                    <small class="stat-label">Last Month</small>
+                    <h4>$503,000</h4>
+                  </div>
+                </div><!-- row -->
+
+              </div><!-- stat -->
+
+            </div><!-- panel-heading -->
+          </div><!-- panel -->
+        </div><!-- col-sm-6 -->
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-btns">
+            <a href="" class="panel-close">&times;</a>
+            <a href="" class="minimize">&minus;</a>
+          </div>
+          <h4 class="panel-title">服务器信息</h4>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered text-center">
+            <tbody><tr>
+                                <td class="gray_bg">服务器操作系统:</td>
+                                <td>{$sys_info.os}</td>
+                                <td class="gray_bg">服务器域名/IP:</td>
+                                <td>{$sys_info.domain} [ {$sys_info.ip} ]</td>
+                            </tr>
+                            <tr>
+                                <td class="gray_bg">服务器环境:</td>
+                                <td>{$sys_info.web_server}</td>
+                                <td class="gray_bg">PHP 版本:</td>
+                                <td>{$sys_info.phpv}</td>
+                            </tr>
+                            <tr>
+                                <td class="gray_bg">Mysql 版本:</td>
+                                <td>{$sys_info.mysql_version}</td>
+                                <td class="gray_bg">GD 版本:</td>
+                                <td>{$sys_info.gdinfo}</td>
+                            </tr>
+                            <tr>
+                                <td class="gray_bg">文件上传限制:</td>
+                                <td>{$sys_info.fileupload}</td>
+                                <td class="gray_bg">最大占用内存:</td>
+                                <td>{$sys_info.memory_limit}</td>
+                            </tr>
+                            <tr>
+                                <td class="gray_bg">最大执行时间:</td>
+                                <td>{$sys_info.max_ex_time}</td>
+                                <td class="gray_bg">安全模式:</td>
+                                <td>{$sys_info.safe_mode}</td>
+                            </tr>
+                            <tr>
+                                <td class="gray_bg">Zlib支持:</td>
+                                <td>{$sys_info.zlib}</td>
+                                <td class="gray_bg">Curl支持:</td>
+                                <td>{$sys_info.curl}</td>
+                            </tr>
+            </tbody>
+          </table>
+          </div><!-- table-responsive -->
+          </div>
+         </div>
+
+        </div><!-- col-sm-9 -->
+      </div><!-- row -->
+{/block}
+
+
